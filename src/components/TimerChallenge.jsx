@@ -3,16 +3,15 @@ import ResultModal from './ResultModal.jsx';
 
 export default function TimerChallenge({ title, targetTime }) {
   const [timerStarted, setTimerStarted] = useState(false);
-  const [timerExpired, setTimerExpired] = useState(false);
+  //const [timerExpired, setTimerExpired] = useState(false);
   const timer = useRef();
   const dialog = useRef();
 
   function handleStart() {
     timer.current = setTimeout(() => {
-      setTimerExpired(true);
-      dialog.current.showModal(); // standard browser feature
+      //setTimerExpired(true);
+      dialog.current.open(); // exposed function
     }, targetTime * 1000);
-
 
     setTimerStarted(true);
   }
